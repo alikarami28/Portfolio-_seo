@@ -334,3 +334,50 @@ html[dir="ltr"] .footer-about .social-links {
         justify-content: center;
     }
 }
+/* ==========================================================================
+   دکمه برگشت به بالا
+   ========================================================================== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 45px;
+    height: 45px;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+}
+
+/* برای RTL */
+html[dir="rtl"] .scroll-to-top {
+    left: auto;
+    right: 30px;
+}
+
+html[dir="ltr"] .scroll-to-top {
+    right: auto;
+    left: 30px;
+}
