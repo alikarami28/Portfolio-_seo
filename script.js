@@ -436,7 +436,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
+/* =====================================================================
+   ۹.۵. دکمه اشتراک‌گذاری نمونه‌کارها
+   ===================================================================== */
+var shareButtons = document.querySelectorAll('.share-btn');
+for (var i = 0; i < shareButtons.length; i++) {
+    shareButtons[i].addEventListener('click', function(e) {
+        e.stopPropagation();
+        var url = encodeURIComponent('https://alikarami.vercel.app/portfolio.html');
+        var title = encodeURIComponent(this.closest('.portfolio-item').getAttribute('data-title'));
+        var text = encodeURIComponent('نمونه کار علی کرمی: ' + this.closest('.portfolio-item').getAttribute('data-title'));
+        
+        if (this.classList.contains('share-telegram')) {
+            window.open('https://t.me/share/url?url=' + url + '&text=' + text, '_blank');
+        } else if (this.classList.contains('share-whatsapp')) {
+            window.open('https://wa.me/?text=' + text + '%20' + url, '_blank');
+        }
+    });
+}
+    
     /* =====================================================================
        ۱۰. انیمیشن اسکرول
        ===================================================================== */
