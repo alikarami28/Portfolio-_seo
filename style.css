@@ -417,3 +417,15 @@ html[dir="ltr"] .scroll-to-top {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+.scroll-to-top {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.4rem !important;
+    bottom: 25px !important;
+    right: 25px !important;
+    z-index: 9999 !important;
+    background: #3b82f6 !important;
+    color: #fff !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5) !important;
+}
