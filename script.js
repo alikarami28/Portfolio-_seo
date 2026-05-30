@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(scrollBtn);
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 500) {
+        if (window.scrollY > 200) {
             scrollBtn.classList.add('show');
         } else {
             scrollBtn.classList.remove('show');
