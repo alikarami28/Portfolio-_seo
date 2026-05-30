@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقالات آموزشی | طراحی وب و هوش مصنوعی | علی کرمی</title>
+    <meta name="description" content="مقالات آموزشی علی کرمی در زمینه طراحی وب، UI/UX، هوش مصنوعی، Midjourney، Figma و برنامه‌نویسی فرانت‌اند">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .blog-card {
+            background: var(--bg-alt);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .blog-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #fff;
+        }
+        
+        .blog-card-body {
+            padding: 25px;
+        }
+        
+        .blog-card-category {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .blog-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .blog-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        
+        .blog-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .blog-date {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+        
+        .blog-read-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .blog-read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo-container"><span class="logo-text">A.Karami</span></a>
+            <nav class="nav-links">
+                <a href="index.html" data-translate="nav_home">خانه</a>
+                <a href="about.html" data-translate="nav_about">درباره من</a>
+                <a href="services.html" data-translate="nav_services">خدمات و مهارت‌ها</a>
+                <a href="portfolio.html" data-translate="nav_portfolio">نمونه‌کارها</a>
+                <a href="blog.html" class="active">مقالات</a>
+                <a href="contact.html" data-translate="nav_contact">تماس</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon"><i class="fa-solid fa-moon"></i></button>
+                <button id="hamburger-menu" class="btn-icon mobile-only"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header reveal">
+            <div class="container">
+                <h1 class="page-title">مقالات <span>آموزشی</span></h1>
+                <p>آموزش طراحی وب، UI/UX، هوش مصنوعی و برنامه‌نویسی</p>
+            </div>
+        </section>
+
+        <section class="container reveal">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-card-img"><i class="fa-solid fa-code"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-category">توسعه وب</span>
+                        <h3>چطور یه سایت فروشگاهی حرفه‌ای با HTML/CSS/JS بسازیم؟</h3>
+                        <p>آموزش گام‌به‌گام ساخت فروشگاه آنلاین با سبد خرید، فیلتر محصولات و طراحی ریسپانسیو...</p>
+                        <div class="blog-card-footer">
+                            <span class="blog-date">۲۵ اردیبهشت ۱۴۰۴</span>
+                            <a href="#" class="blog-read-more">ادامه مطلب →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-img"><i class="fa-solid fa-brain"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-category">هوش مصنوعی</span>
+                        <h3>راهنمای کامل پرامپت‌نویسی در Midjourney برای طراحان</h3>
+                        <p>یاد بگیر چطور با پرامپت‌های حرفه‌ای، تصاویر خیره‌کننده با هوش مصنوعی تولید کنی...</p>
+                        <div class="blog-card-footer">
+                            <span class="blog-date">۱۸ اردیبهشت ۱۴۰۴</span>
+                            <a href="#" class="blog-read-more">ادامه مطلب →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-img"><i class="fa-solid fa-pen-nib"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-category">طراحی UI/UX</span>
+                        <h3>۱۰ اصل طلایی طراحی رابط کاربری که هر توسعه‌دهنده باید بدونه</h3>
+                        <p>اصول Gestalt، سلسله‌مراتب بصری و نکات کاربردی برای طراحی حرفه‌ای در Figma...</p>
+                        <div class="blog-card-footer">
+                            <span class="blog-date">۱۰ اردیبهشت ۱۴۰۴</span>
+                            <a href="#" class="blog-read-more">ادامه مطلب →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-img"><i class="fa-brands fa-android"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-category">اندروید</span>
+                        <h3>دستورات ADB که هر توسعه‌دهنده اندروید باید بلد باشه</h3>
+                        <p>مجموعه کاملی از دستورات ADB برای دیباگ، نصب و مدیریت دستگاه‌های اندرویدی...</p>
+                        <div class="blog-card-footer">
+                            <span class="blog-date">۵ اردیبهشت ۱۴۰۴</span>
+                            <a href="#" class="blog-read-more">ادامه مطلب →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-img"><i class="fa-solid fa-palette"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-category">طراحی گرافیک</span>
+                        <h3>چطور یه لوگوی مینیمال و حرفه‌ای طراحی کنیم؟</h3>
+                        <p>اصول طراحی لوگو، روانشناسی رنگ‌ها و نکات کاربردی در Illustrator و Photoshop...</p>
+                        <div class="blog-card-footer">
+                            <span class="blog-date">۱ اردیبهشت ۱۴۰۴</span>
+                            <a href="#" class="blog-read-more">ادامه مطلب →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-img"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-category">عملکرد وب</span>
+                        <h3>چطور سرعت سایت رو با WebP و Lazy Loading دو برابر کنیم؟</h3>
+                        <p>بهینه‌سازی تصاویر، فشرده‌سازی فایل‌ها و تکنیک‌های افزایش Performance Score...</p>
+                        <div class="blog-card-footer">
+                            <span class="blog-date">۲۸ فروردین ۱۴۰۴</span>
+                            <a href="#" class="blog-read-more">ادامه مطلب →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="logo-container"><span class="logo-text">A.Karami</span></a>
+                <p data-translate="footer_about_text">تلفیق هنر، تکنولوژی و هوش مصنوعی برای خلق تجربه‌های دیجیتال بی‌نظیر.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/989373631322" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/alikarami28" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://t.me/alikarami28" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://github.com/alikarami28" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 data-translate="footer_quick_links">دسترسی سریع</h3>
+                <ul>
+                    <li><a href="index.html" data-translate="nav_home">خانه</a></li>
+                    <li><a href="about.html" data-translate="nav_about">درباره من</a></li>
+                    <li><a href="services.html" data-translate="nav_services">خدمات و مهارت‌ها</a></li>
+                    <li><a href="portfolio.html" data-translate="nav_portfolio">نمونه‌کارها</a></li>
+                    <li><a href="blog.html">مقالات</a></li>
+                    <li><a href="contact.html" data-translate="nav_contact">تماس با من</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 data-translate="footer_contact_info">اطلاعات تماس</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> <span data-translate="footer_address">تهران، خیابان آذربایجان</span></li>
+                    <li><i class="fa-solid fa-phone"></i> <span data-translate="footer_phone">۰۹۳۷۳۶۳۱۳۲۲</span></li>
+                    <li><i class="fa-solid fa-envelope"></i> <span data-translate="footer_email">alikarami28@gmail.com</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p data-translate="footer_copyright">&copy; ۱۴۰۵ طراحی و توسعه با <i class="fa-solid fa-heart" style="color: #ef4444;"></i> توسط <strong>علی کرمی</strong>. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
