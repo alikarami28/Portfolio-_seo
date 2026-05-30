@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- صفحه اصلی -->
+  <url>
+    <loc>https://portfolio-self-three-33.vercel.app/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://portfolio-self-three-33.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-self-three-33.vercel.app/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfolio-self-three-33.vercel.app/"/>
+    <image:image>
+      <image:loc>https://portfolio-self-three-33.vercel.app/1000087173.webp</image:loc>
+      <image:title>علی کرمی - توسعه دهنده وب و متخصص هوش مصنوعی</image:title>
+      <image:caption>Ali Karami Portfolio</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- درباره من -->
+  <url>
+    <loc>https://portfolio-self-three-33.vercel.app/about.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://portfolio-self-three-33.vercel.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-self-three-33.vercel.app/about.html?lang=en"/>
+  </url>
+  
+  <!-- خدمات -->
+  <url>
+    <loc>https://portfolio-self-three-33.vercel.app/services.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://portfolio-self-three-33.vercel.app/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-self-three-33.vercel.app/services.html?lang=en"/>
+  </url>
+  
+  <!-- نمونه‌کارها -->
+  <url>
+    <loc>https://portfolio-self-three-33.vercel.app/portfolio.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://portfolio-self-three-33.vercel.app/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-self-three-33.vercel.app/portfolio.html?lang=en"/>
+    <image:image>
+      <image:loc>https://portfolio-self-three-33.vercel.app/portfolio-1.webp</image:loc>
+      <image:title>فروشگاه آنلاین شیک - پروژه فرانت‌اند</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portfolio-self-three-33.vercel.app/portfolio-2.webp</image:loc>
+      <image:title>پرتره سینمایی 8K - Midjourney AI</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portfolio-self-three-33.vercel.app/portfolio-3.webp</image:loc>
+      <image:title>طراحی لوگو کافه آرمین - گرافیک دیزاین</image:title>
+    </image:image>
+  </url>
+  
+  <!-- تماس -->
+  <url>
+    <loc>https://portfolio-self-three-33.vercel.app/contact.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://portfolio-self-three-33.vercel.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-self-three-33.vercel.app/contact.html?lang=en"/>
+  </url>
+  
+</urlset>
