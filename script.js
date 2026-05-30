@@ -528,6 +528,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /* =====================================================================
        ۱۲. دکمه برگشت به بالا
        ===================================================================== */
+
     var scrollBtn = document.createElement('button');
     scrollBtn.className = 'scroll-to-top';
     scrollBtn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
