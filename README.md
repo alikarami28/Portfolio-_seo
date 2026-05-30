@@ -43,3 +43,39 @@
 ---
 
 ## 📁 ساختار پروژه
+---
+
+## 🎯 مهارت‌ها
+
+| مهارت | سطح |
+|-------|-----|
+| Web Development (HTML/CSS/JS) | ۹۰٪ |
+| AI Image Generation | ۹۵٪ |
+| Graphic Design & Photoshop | ۸۵٪ |
+| Android OS & ADB | ۸۰٪ |
+
+---
+
+## 📞 ارتباط با من
+
+| راه ارتباطی | لینک |
+|-------------|------|
+| **واتساپ** | [+98 937 363 1322](https://wa.me/989373631322) |
+| **تلگرام** | [@alikarami28](https://t.me/alikarami28) |
+| **اینستاگرام** | [@alikarami28](https://instagram.com/alikarami28) |
+| **ایمیل** | alikarami28@gmail.com |
+| **گیتهاب** | [github.com/alikarami28](https://github.com/alikarami28) |
+
+---
+
+## 🚀 نصب و اجرا
+
+```bash
+# کلون کردن پروژه
+git clone https://github.com/alikarami28/portfolio.git
+
+# وارد پوشه پروژه شو
+cd portfolio
+
+# با Live Server باز کن (VSCode Extension)
+# یا فایل index.html رو مستقیم در مرورگر باز کن
