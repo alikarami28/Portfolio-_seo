@@ -13,13 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.setAttribute('lang', translations[lang].lang);
         document.documentElement.setAttribute('dir', translations[lang].dir);
         
-        // ترجمه عناصر ساده
         var elements = document.querySelectorAll('[data-translate]');
         for (var i = 0; i < elements.length; i++) {
             var el = elements[i];
             var key = el.getAttribute('data-translate');
             if (translations[lang][key] !== undefined) {
-                // فقط اگه عنصر بچه نداشته باشه یا بچه‌هاش تگ‌های ساده باشن
                 if (el.children.length === 0 || el.querySelector('i, strong, span') === null) {
                     el.textContent = translations[lang][key];
                 } else if (el.children.length <= 2) {
@@ -28,25 +26,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // ترجمه دستی بخش‌های خاص
         translateSpecialSections();
-        
         updateLangButton();
         resetTyping();
     }
     
     function translateSpecialSections() {
-        // ترجمه about-list
         var aboutItems = document.querySelectorAll('.about-list li');
         if (aboutItems.length >= 4) {
             var labels = ['about_list_name', 'about_list_email', 'about_list_phone', 'about_list_location'];
             var values = ['about_name_value', 'about_email_value', 'about_phone_value', 'about_location_value'];
-            
             for (var i = 0; i < 4; i++) {
                 var strong = aboutItems[i].querySelector('strong');
-                var icon = aboutItems[i].querySelector('i');
                 if (strong) strong.textContent = translations[currentLang][labels[i]];
-                // مقدار بعد از strong رو عوض کن
                 var textNode = aboutItems[i].lastChild;
                 if (textNode && textNode.nodeType === 3) {
                     textNode.textContent = ' ' + translations[currentLang][values[i]];
@@ -54,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // ترجمه پورتفولیو آیتم‌ها
         var portfolioItems = document.querySelectorAll('.portfolio-item');
         for (var j = 0; j < portfolioItems.length; j++) {
             var num = j + 1;
@@ -80,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // ترجمه فوتر
         var footerLis = document.querySelectorAll('.footer-contact ul li');
         if (footerLis.length >= 3) {
             var footerData = [
@@ -88,21 +78,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 { icon: 'fa-phone', text: translations[currentLang].footer_phone },
                 { icon: 'fa-envelope', text: translations[currentLang].footer_email }
             ];
-            
             for (var k = 0; k < 3; k++) {
-                var icon = footerLis[k].querySelector('i');
-                if (icon) {
-                    footerLis[k].innerHTML = '<i class="fa-solid ' + footerData[k].icon + '"></i> ' + footerData[k].text;
-                }
+                footerLis[k].innerHTML = '<i class="fa-solid ' + footerData[k].icon + '"></i> ' + footerData[k].text;
             }
         }
         
-        // ترجمه contact detail items
         var contactItems = document.querySelectorAll('.contact-detail-item');
         if (contactItems.length >= 3) {
             var contactLabels = ['contact_phone_label', 'contact_email_label', 'contact_address_label'];
             var contactValues = ['contact_phone_value', 'contact_email_value', 'contact_address_value'];
-            
             for (var m = 0; m < 3; m++) {
                 var h4 = contactItems[m].querySelector('h4');
                 var p = contactItems[m].querySelector('p');
@@ -111,26 +95,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // ترجمه لیبل‌های فرم
-        var formLabels = {
-            'name': 'form_name_label',
-            'email': 'form_email_label',
-            'message': 'form_message_label'
-        };
+        var formLabels = { 'name': 'form_name_label', 'email': 'form_email_label', 'message': 'form_message_label' };
         for (var id in formLabels) {
             var label = document.querySelector('label[for="' + id + '"]');
             if (label) label.textContent = translations[currentLang][formLabels[id]];
         }
         
-        // ترجمه دکمه submit فرم
         var submitSpan = document.querySelector('.submit-btn span');
         if (submitSpan) submitSpan.textContent = translations[currentLang].form_submit;
         
-        // ترجمه success message
         var successDiv = document.getElementById('form-success');
         if (successDiv) successDiv.textContent = translations[currentLang].form_success;
         
-        // ترجمه lightbox
         var lightboxTechLabel = document.querySelector('.lightbox-tech strong');
         if (lightboxTechLabel) lightboxTechLabel.textContent = translations[currentLang].lightbox_tech_label;
         
@@ -147,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ایجاد دکمه زبان
     (function() {
         var headerActions = document.querySelector('.header-actions');
         if (headerActions && !document.getElementById('lang-toggle')) {
@@ -465,82 +440,78 @@ document.addEventListener('DOMContentLoaded', function() {
     revealOnScroll();
 
     /* =====================================================================
-   ۱۱. فرم تماس + ارسال به تلگرام + EmailJS پاسخ خودکار
-   ===================================================================== */
-var contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    // Initialize EmailJS
-    (function() {
+       ۱۱. فرم تماس + تلگرام + EmailJS
+       ===================================================================== */
+    var contactForm = document.getElementById('contact-form');
+    if (contactForm) {
         emailjs.init("OWAXBnrvim30FoRa6");
-    })();
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var isValid = true;
-        var nameInput = document.getElementById('name');
-        var emailInput = document.getElementById('email');
-        var messageInput = document.getElementById('message');
         
-        document.getElementById('name-error').textContent = '';
-        document.getElementById('email-error').textContent = '';
-        document.getElementById('message-error').textContent = '';
-        document.getElementById('form-success').style.display = 'none';
-        
-        if (!nameInput.value.trim()) {
-            document.getElementById('name-error').textContent = translations[currentLang].form_error_name || 'لطفاً نام خود را وارد کنید.';
-            isValid = false;
-        }
-        if (!emailInput.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-            document.getElementById('email-error').textContent = translations[currentLang].form_error_email || 'آدرس ایمیل نامعتبر است.';
-            isValid = false;
-        }
-        if (!messageInput.value.trim()) {
-            document.getElementById('message-error').textContent = translations[currentLang].form_error_message || 'متن پیام نمی‌تواند خالی باشد.';
-            isValid = false;
-        }
-        
-        if (!isValid) return;
-        
-        var btn = contactForm.querySelector('.submit-btn');
-        var originalContent = btn.innerHTML;
-        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ' + (translations[currentLang].form_sending || 'در حال ارسال...');
-        
-        // ارسال به تلگرام
-        fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: nameInput.value, email: emailInput.value, message: messageInput.value })
-        })
-        .then(function(response) { return response.json(); })
-        .then(function(data) {
-            console.log('تلگرام:', data.success ? 'ارسال شد' : 'خطا');
-        })
-        .catch(function(error) {
-            console.log('خطای تلگرام:', error);
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var isValid = true;
+            var nameInput = document.getElementById('name');
+            var emailInput = document.getElementById('email');
+            var messageInput = document.getElementById('message');
+            
+            document.getElementById('name-error').textContent = '';
+            document.getElementById('email-error').textContent = '';
+            document.getElementById('message-error').textContent = '';
+            document.getElementById('form-success').style.display = 'none';
+            
+            if (!nameInput.value.trim()) {
+                document.getElementById('name-error').textContent = translations[currentLang].form_error_name || 'لطفاً نام خود را وارد کنید.';
+                isValid = false;
+            }
+            if (!emailInput.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+                document.getElementById('email-error').textContent = translations[currentLang].form_error_email || 'آدرس ایمیل نامعتبر است.';
+                isValid = false;
+            }
+            if (!messageInput.value.trim()) {
+                document.getElementById('message-error').textContent = translations[currentLang].form_error_message || 'متن پیام نمی‌تواند خالی باشد.';
+                isValid = false;
+            }
+            
+            if (!isValid) return;
+            
+            var btn = contactForm.querySelector('.submit-btn');
+            var originalContent = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ' + (translations[currentLang].form_sending || 'در حال ارسال...');
+            
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: nameInput.value, email: emailInput.value, message: messageInput.value })
+            })
+            .then(function(response) { return response.json(); })
+            .then(function(data) {
+                console.log('تلگرام: ' + (data.success ? 'ارسال شد' : 'خطا'));
+            })
+            .catch(function(error) {
+                console.log('خطای تلگرام:', error);
+            });
+            
+            emailjs.send("service_v0yu9ki", "template_b7qoxcf", {
+                user_name: nameInput.value,
+                user_email: emailInput.value,
+                user_message: messageInput.value
+            })
+            .then(function(response) {
+                console.log('ایمیل خودکار ارسال شد: ' + response.status);
+                document.getElementById('form-success').style.display = 'block';
+                document.getElementById('form-success').textContent = translations[currentLang].form_success || 'پیام شما با موفقیت ارسال شد!';
+                contactForm.reset();
+            })
+            .catch(function(error) {
+                console.log('خطای EmailJS:', error);
+                document.getElementById('form-success').style.display = 'block';
+                document.getElementById('form-success').textContent = translations[currentLang].form_success || 'پیام شما با موفقیت ارسال شد!';
+                contactForm.reset();
+            })
+            .finally(function() {
+                btn.innerHTML = originalContent;
+            });
         });
-        
-        // ارسال ایمیل خودکار به کاربر با EmailJS
-        emailjs.send("service_v0yu9ki", "template_b7qoxcf", {
-            user_name: nameInput.value,
-            user_email: emailInput.value,
-            user_message: messageInput.value
-        })
-        .then(function(response) {
-            console.log('ایمیل خودکار ارسال شد:', response.status);
-            document.getElementById('form-success').style.display = 'block';
-            document.getElementById('form-success').textContent = translations[currentLang].form_success || 'پیام شما با موفقیت ارسال شد!';
-            contactForm.reset();
-        })
-        .catch(function(error) {
-            console.log('خطای EmailJS:', error);
-            document.getElementById('form-success').style.display = 'block';
-            document.getElementById('form-success').textContent = translations[currentLang].form_success || 'پیام شما با موفقیت ارسال شد!';
-            contactForm.reset();
-        })
-        .finally(function() {
-            btn.innerHTML = originalContent;
-        });
-    });
-}
+    }
+
     console.log('✅ سایت آماده است! زبان فعلی: ' + currentLang);
 });
