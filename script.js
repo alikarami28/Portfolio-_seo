@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     /* =====================================================================
+       Preloader
+       ===================================================================== */
+    window.addEventListener('load', function() {
+        var preloader = document.getElementById('preloader');
+        if (preloader) {
+            setTimeout(function() {
+                preloader.classList.add('hidden');
+            }, 500);
+        }
+    });
+
+    /* =====================================================================
        ۰. سیستم دو زبانه
        ===================================================================== */
     var currentLang = localStorage.getItem('lang') || 'fa';
@@ -512,6 +524,27 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    /* =====================================================================
+       ۱۲. دکمه برگشت به بالا
+       ===================================================================== */
+    var scrollBtn = document.createElement('button');
+    scrollBtn.className = 'scroll-to-top';
+    scrollBtn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+    scrollBtn.setAttribute('aria-label', 'برگشت به بالا');
+    document.body.appendChild(scrollBtn);
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+            scrollBtn.classList.add('show');
+        } else {
+            scrollBtn.classList.remove('show');
+        }
+    });
+
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     console.log('✅ سایت آماده است! زبان فعلی: ' + currentLang);
 });
