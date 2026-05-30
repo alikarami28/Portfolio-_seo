@@ -5,6 +5,7 @@ const translations = {
         nav_about: "درباره من",
         nav_services: "خدمات و مهارت‌ها",
         nav_portfolio: "نمونه‌کارها",
+        nav_blog: "مقالات",
         nav_contact: "تماس",
         
         // === صفحه اصلی ===
@@ -23,6 +24,9 @@ const translations = {
             "متخصص پردازش تصویر هوش مصنوعی",
             "پشتیبان ارشد سیستم‌های هوشمند"
         ],
+        
+        // === نظرات مشتریان ===
+        testimonials_title: "نظرات مشتریان",
         
         // === درباره من ===
         about_title: "داستان",
@@ -145,6 +149,7 @@ const translations = {
         nav_about: "About Me",
         nav_services: "Services & Skills",
         nav_portfolio: "Portfolio",
+        nav_blog: "Blog",
         nav_contact: "Contact",
         
         // === Home Page ===
@@ -163,6 +168,9 @@ const translations = {
             "AI Image Processing Specialist",
             "Senior Smart Systems Support"
         ],
+        
+        // === Testimonials ===
+        testimonials_title: "Client Testimonials",
         
         // === About Page ===
         about_title: "My",
