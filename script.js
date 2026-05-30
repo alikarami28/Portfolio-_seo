@@ -531,7 +531,6 @@ window.addEventListener('scroll', function() {
 
 scrollBtn.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-});
 
     console.log('✅ سایت آماده است! زبان فعلی: ' + currentLang);
 });
