@@ -50,6 +50,10 @@
   ],
   "redirects": [
     {
+  "source": "/404",
+  "destination": "/404.html"
+    }
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
